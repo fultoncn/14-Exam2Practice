@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Colleen Fulton.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -55,6 +55,10 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+    actual = practice_problem2a([1, 2, 3], 1)
+    expected = [2, 3, 4]
+    print('Actual:', actual)
+    print('Expected:', expected)
 
 
 def practice_problem2a(sequence, delta):
@@ -83,6 +87,14 @@ def practice_problem2a(sequence, delta):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
+    newerlist = []
+    for k in range(len(sequence)):
+        new = delta+sequence[k]
+        # sequence[k] = new
+        something = newerlist+[new]
+        # [List] + [List]
+        newerlist = something
+    return newerlist
 
 
 def run_test_practice_problem2b():
@@ -177,7 +189,16 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-
+    letters = ''
+    for k in range(len(sequence)):
+        string = sequence[k]
+        # print('problem', string)
+        # Something not callable prob put () where [] should be.
+        if string != '':
+            # != not equal
+            firstletter = string[0]
+            letters = letters + firstletter
+    return letters
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
