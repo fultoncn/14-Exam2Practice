@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 3.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Colleen Fulton.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -64,7 +64,7 @@ def is_prime(n):
     return True
     # ------------------------------------------------------------------
     # Students:
-    #   Do NOT touch the above  is_prime  function - it has no TODO.
+    #   Do NOT touch the above  is_prime  function - it has no DONE.
     #   Do NOT copy code from this function.
     #
     # Instead, ** CALL ** this function as needed in the problems below.
@@ -156,13 +156,22 @@ def practice_problem3a(circles):
       :type sequence: [rg.Circle]
     """
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
+
+    total = 1
+    for k in range(len(circles)):
+        circle = circles[k]
+        center = circle.center
+        total = total*center.x
+    return total
+    # No if statement needed because the total needs to start off at 1.
+    # Can't start at 0 because it is being taken the product of.
 
 
 def run_test_practice_problem3b():
@@ -266,7 +275,7 @@ def practice_problem3b(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -278,6 +287,12 @@ def practice_problem3b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
+    for k in range(len(sequence)-1):
+        value = sequence[k]
+        lastvalue = sequence[len(sequence)-1]
+        if value == lastvalue:
+            return True
+    return False
 
 
 def run_test_practice_problem3c():
@@ -361,6 +376,12 @@ def practice_problem3c(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
+    new_sequence = []
+    for k in range(len(sequence)):
+        spot = sequence[k]
+        if spot == 0:
+            new_sequence = new_sequence + [k]
+    return new_sequence
 
 
 def run_test_practice_problem3d():
@@ -436,25 +457,29 @@ def practice_problem3d(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
-
+    for k in range(len(sequence)):
+        value = sequence[k]
+        if value == 0:
+            return k
+    return -1
 
     ####################################################################
     # TODO: 6. Just ABOVE this TODO, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
-    #       -- Your FIRST solution (ABOVE this TODO)
+    #       -- Your FIRST solution (ABOVE this DONE)
     #            should be a solution that IGNORES
     #              practice_problem3c (the previous problem).
     #
-    #       -- Your SECOND solution (BELOW this TODO)
+    #       -- Your SECOND solution (BELOW this DONE)
     #            should be a solution that USES (calls)
     #              practice_problem3c.
     #
@@ -529,6 +554,17 @@ def practice_problem3e(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
+    sum_of_even_numbers = 0
+    for k in range(len(sequence)):
+        value = sequence[k]
+        # print('Value of Numbers and Count:', k, value, sum_of_even_numbers)
+        if k % 2 == 0:
+            sum_of_even_numbers = sum_of_even_numbers + value
+    return sum_of_even_numbers
+
+
+
+
 
 
 # ----------------------------------------------------------------------
